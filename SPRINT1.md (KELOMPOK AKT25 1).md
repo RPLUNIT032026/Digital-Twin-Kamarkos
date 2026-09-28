@@ -26,9 +26,11 @@
 
 ---
 
-## 🧠 Catatan: Ternyata kami dari satu unit dan satu prodi
+---## 📋 Pembagian Tugas
+>
 
-
-> 💬 kendala: Kami hanya mengetahui sedikit tentang Rekayasa Perangkat Lunak
-
----
+| No | Nama | Username GitHub | Tugas Sprint 1 | Status |
+|----|------|-----------------|----------------|--------|
+| 1  | Ahmad Hajid | @ahmadhajidm | Membuat repositori dan memprogram di file SPRINT1.md |  Selesai |
+| 2  | Tri Bagus | @tribagusn | Mencari referensi kode program agar berjalan sesuai yang kami mau dan membantu tugas hajid|  Selesai |
+| 3  | Rafli Acmad | @rafli1402 | Merangkum materi dan menyusun catatan kendala kelompok |  Selesai |
