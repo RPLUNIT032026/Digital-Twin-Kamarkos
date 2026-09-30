@@ -24,12 +24,13 @@ DIGITAL TWIN SMART ROOM
 [SENSOR]
 
 Suhu       = 28°C
+
 Kelembapan = 65%
 
 [PERANGKAT]
 
 Lampu = ON
-AC    = ON
+
 
 [STATUS]
 
