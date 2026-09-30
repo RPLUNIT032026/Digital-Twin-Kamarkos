@@ -1,36 +1,25 @@
-# 🚀 Sprint 1 — 30 September 2026
-### Rekayasa Perangkat Lunak | Kelompok: _(kelompok rpl01 gacorr)_
+PROJECT CHARTER
+DIGITAL TWIN SMART ROOM
 
----
+Nama Proyek:
+Digital Twin Smart Room
 
-## 👥 Anggota Tim
+Latar Belakang:
+Proyek ini dibuat untuk membuat representasi digital dari sebuah
+ruangan yang dapat menampilkan kondisi ruangan secara sederhana,
+seperti suhu, kelembapan, lampu.
 
-| No | Nama | Username GitHub | Peran |
-|----|------|------------------|-------|
-| 1  | Ahmad Hajid | @ahmadhajidm | Developer |
-| 2  | Tri Bagus   | @tribagusn | Developer |
-| 3  | rafli acmad | @rafli1402 | Developer |
+Tujuan:
+Membuat sistem Digital Twin sederhana yang dapat memantau dan
+menampilkan kondisi ruangan secara digital.
 
----
+Ruang Lingkup:
+1. Menampilkan data suhu ruangan.
+2. Menampilkan data kelembapan.
+3. Menampilkan status lampu.
+4. Menampilkan kondisi ruangan.
 
-## 🎯 Sprint Goal
-> _mudah-mudahan kami mendapatkan ilmu dan nilai yang baik di mk ini _
-
----
-
-| Nim | Unit | Prodi |
-|------|----------|--------|
-|250504166|05|Informatika|
-|250504172|05|Informatika|
-|250504169|05|Informatika|
-
----
-
----## 📋 Pembagian Tugas
->
-
-| No | Nama | Username GitHub | Tugas Sprint 1 | Status |
-|----|------|-----------------|----------------|--------|
-| 1  | Ahmad Hajid | @ahmadhajidm | Membuat repositori dan memprogram di file SPRINT1.md |  Selesai |
-| 2  | Tri Bagus | @tribagusn | Mencari referensi kode program agar berjalan sesuai yang kami mau dan membantu tugas hajid|  Selesai |
-| 3  | Rafli Acmad | @rafli1402 | Merangkum materi dan menyusun catatan kendala kelompok |  Selesai |
+Anggota Tim:
+1. Ahmad Hajid - Developer
+2. Tri bagus - Developer
+3. Rafli Acmad - Developer
