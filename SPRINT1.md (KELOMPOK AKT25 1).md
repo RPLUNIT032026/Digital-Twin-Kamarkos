@@ -34,3 +34,10 @@
 | 1  | Ahmad Hajid | @ahmadhajidm | Membuat repositori dan memprogram di file SPRINT1.md |  Selesai |
 | 2  | Tri Bagus | @tribagusn | Mencari referensi kode program agar berjalan sesuai yang kami mau dan membantu tugas hajid|  Selesai |
 | 3  | Rafli Acmad | @rafli1402 | Merangkum materi dan menyusun catatan kendala kelompok |  Selesai |
+
+---
+
+## 📌 Catatan Tambahan
+
+- Semua anggota wajib commit dengan pesan yang jelas
+- Diskusi kelompok minimal 1x seminggu
