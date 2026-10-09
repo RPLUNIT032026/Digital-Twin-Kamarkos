@@ -174,3 +174,80 @@ sequenceDiagram
         DT-->>IoT: Data diterima
     end
 ```
+
+## 6. State Diagram
+
+State diagram menunjukkan perubahan status suatu objek selama siklus hidupnya. Pada sistem
+Digital Twin Kamar Kos, dua objek yang statusnya berubah-ubah adalah pesanan kamar dan review.
+
+### 6.1 Status Pesanan Kamar
+
+Diagram ini menunjukkan perjalanan pesanan sejak penghuni memesan kamar sampai masa sewa selesai.
+
+```mermaid
+stateDiagram-v2
+    direction LR
+
+    state "Menunggu pembayaran" as MenungguBayar
+    state "Menunggu konfirmasi" as MenungguKonfirmasi
+    state "Sewa aktif" as Aktif
+
+    [*] --> MenungguBayar: Penghuni memesan kamar
+    MenungguBayar --> MenungguKonfirmasi: Bukti bayar diunggah
+    MenungguBayar --> Dibatalkan: Batas waktu habis atau dibatalkan
+
+    MenungguKonfirmasi --> Aktif: Pemilik mengonfirmasi
+    MenungguKonfirmasi --> Ditolak: Pemilik menolak
+
+    Aktif --> Selesai: Masa sewa berakhir
+
+    Dibatalkan --> [*]
+    Ditolak --> [*]
+    Selesai --> [*]
+```
+
+| Status | Keterangan |
+|---|---|
+| Menunggu pembayaran | Pesanan dibuat, penghuni belum membayar |
+| Menunggu konfirmasi | Bukti pembayaran sudah diunggah, menunggu pemeriksaan pemilik |
+| Sewa aktif | Pembayaran dikonfirmasi, kamar dipakai dan digital twin kamar aktif |
+| Selesai | Masa sewa berakhir dan kamar kembali tersedia |
+| Dibatalkan | Pesanan dibatalkan penghuni atau melewati batas waktu pembayaran |
+| Ditolak | Pemilik menolak pesanan |
+
+### 6.2 Status Review
+
+Diagram ini menunjukkan alur review dari penulisan oleh penghuni sampai terbit atau dihapus.
+
+```mermaid
+stateDiagram-v2
+    state "Menunggu moderasi" as Moderasi
+
+    [*] --> Draft: Penghuni menulis review
+    Draft --> Moderasi: Review dikirim
+    Draft --> [*]: Draft dihapus
+
+    Moderasi --> Terbit: Disetujui
+    Moderasi --> Ditolak: Melanggar aturan
+
+    Ditolak --> Draft: Penghuni merevisi
+
+    Terbit --> Ditanggapi: Pemilik membalas
+    Terbit --> Dilaporkan: Dilaporkan pengguna lain
+    Ditanggapi --> Dilaporkan: Dilaporkan pengguna lain
+
+    Dilaporkan --> Terbit: Laporan tidak terbukti
+    Dilaporkan --> Dihapus: Laporan terbukti
+
+    Dihapus --> [*]
+```
+
+| Status | Keterangan |
+|---|---|
+| Draft | Review sedang ditulis dan belum dikirim |
+| Menunggu moderasi | Review dikirim dan sedang diperiksa |
+| Terbit | Review tampil untuk umum |
+| Ditanggapi | Pemilik kost sudah membalas review |
+| Dilaporkan | Review dilaporkan dan sedang ditinjau |
+| Ditolak | Review tidak lolos moderasi dan bisa direvisi |
+| Dihapus | Review dihapus dari sistem |
