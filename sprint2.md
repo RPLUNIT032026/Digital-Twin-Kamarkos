@@ -1,44 +1,77 @@
-# 🏠 DIGITAL TWIN KAMAR KOS
+## 2. Alur MDA Sederhana
 
-Selamat datang di proyek Digital Twin Kamar Kos!
-Sistem ini digunakan untuk memantau kondisi kamar secara digital.
-> Maaf kami masih pemula, Bu. Mohon maaf jika masih banyak kesalahan.
-
-
-## 🌡️ Contoh Data Kamar
-
-| Informasi | Nilai |
-|---|---|
-| Suhu | 28°C |
-| Kelembapan | 65% |
-| Lampu | HIDUP |
-| Status | Normal |
-
-## 📊 Diagram Alur Sistem
+Diagram ini memperlihatkan bagaimana satu model sistem dapat
+dikembangkan untuk beberapa platform.
 
 ```mermaid
 flowchart TD
-    A([Mulai]) --> B[Masuk Aplikasi]
-    B --> C[Dashboard Kamar Kos]
-    C --> D[Baca Data Suhu]
-    C --> E[Baca Data Kelembapan]
-    C --> F[Lihat Status Lampu]
-    D --> G[Tampilkan Kondisi Kamar]
-    E --> G
-    F --> G
-    G --> H{Pilih Kontrol Lampu}
-    H -->|ON| I[Lampu Menyala]
-    H -->|OFF| J[Lampu Mati]
-    I --> K[Perbarui Status]
-    J --> K
-    K --> C
+    A["PIM<br/>Model Digital Twin Kamar Kos"]
+
+    A --> B["Transformasi ke Web"]
+    A --> C["Transformasi ke Android"]
+
+    B --> D["PSM Web"]
+    C --> E["PSM Android"]
+
+    D --> F["Pembuatan Kode Web"]
+    E --> G["Pembuatan Kode Android"]
+
+    F --> H["Aplikasi Kamar Kos Web"]
+    G --> I["Aplikasi Kamar Kos Android"]
+
+    classDef model fill:#e1f5fe,stroke:#03a9f4,stroke-width:2px,color:#111
+    classDef output fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#111
+    class A,D,E model
+    class H,I output
 ```
 
-## 💡 Diagram Status Lampu
 
-```mermaid
-stateDiagram-v2
-    [*] --> Mati
-    Mati --> Menyala: Tombol ON
-    Menyala --> Mati: Tombol OFF
+
+
+Dengan pendekatan ini, rancangan sistem dapat dibuat terlebih dahulu
+sebelum diimplementasikan menjadi aplikasi.
+
+**Catatan:** Diagram ini merupakan ilustrasi proses MDA. Transformasi
+model dan pembuatan kode otomatis memerlukan alat atau generator
+yang sesuai; diagram saja tidak otomatis menghasilkan program.
+
+## Context Model — DIGITAL TWIN KAMAR KOS
+
+```mermaid id="q8m2vn"
+flowchart TB
+    A["Sistem Monitoring Kamar"]
+    B["Sistem Notifikasi"]
+    C["Penghuni Kos"]
+    D["Sensor Lingkungan"]
+    E["Sistem Kontrol Perangkat"]
+    F["Database Riwayat"]
+    G["DIGITAL TWIN KAMAR KOS"]
+
+    A --- G
+    B --- G
+    C --- G
+    D --- G
+    G --- E
+    G --- F
+
+    style G fill:#d9f2ff,stroke:#168aad,stroke-width:3px,color:#111
+    style A fill:#ffffff,stroke:#168aad,stroke-width:2px,color:#111
+    style B fill:#ffffff,stroke:#168aad,stroke-width:2px,color:#111
+    style C fill:#ffffff,stroke:#168aad,stroke-width:2px,color:#111
+    style D fill:#ffffff,stroke:#168aad,stroke-width:2px,color:#111
+    style E fill:#ffffff,stroke:#168aad,stroke-width:2px,color:#111
+    style F fill:#ffffff,stroke:#168aad,stroke-width:2px,color:#111
 ```
+
+### Keterangan
+
+1. **Sistem Monitoring Kamar:** menampilkan suhu dan kelembapan.
+2. **Sistem Notifikasi:** memberikan pemberitahuan jika kondisi kamar tidak normal.
+3. **Penghuni Kos:** memantau kondisi dan mengatur perangkat.
+4. **Sensor Lingkungan:** mengirim data kondisi kamar.
+5. **Sistem Kontrol Perangkat:** mengatur lampu dan perangkat lain.
+6. **Database Riwayat:** menyimpan catatan kondisi kamar.
+
+### Kesimpulan
+
+Context Model ini menggambarkan hubungan Digital Twin Kamar Kos dengan enam sistem atau pihak yang mendukung pemantauan dan pengendalian kamar.
